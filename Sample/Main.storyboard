@@ -737,7 +737,7 @@
                         <outlet property="imgJailbreak" destination="bRj-qh-fN1" id="uaH-z1-EyW"/>
                         <outlet property="imgSimulator" destination="hjz-P3-gmc" id="YTr-sM-Qjr"/>
                         <outlet property="imgVPN" destination="KHl-To-B3V" id="1vl-Co-UtB"/>
-                        <outlet property="installStackView" destination="l4g-XX-hJd" id="667-Em-6DP"/>
+                        <outlet property="installedAppViewHeightConstant" destination="SpR-14-KU1" id="DM8-Zf-6PR"/>
                         <outlet property="installedAppsStackView" destination="47x-6D-7bt" id="Lag-8S-R2H"/>
                         <outlet property="lblDevMode" destination="7II-uI-hR0" id="LSa-eb-nuP"/>
                         <outlet property="lblFrida" destination="HRN-VY-7yD" id="Mox-eP-C4G"/>

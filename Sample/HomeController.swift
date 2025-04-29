@@ -5,6 +5,7 @@ import SenseAppProtect_Demo
 
 class HomeController: UIViewController, SenseOSDelegate {
 
+    @IBOutlet weak var installedAppViewHeightConstant: NSLayoutConstraint!
     @IBOutlet weak var imgVPN: UIImageView!
     @IBOutlet weak var imgSimulator: UIImageView!
     @IBOutlet weak var imgJailbreak: UIImageView!
@@ -78,7 +79,6 @@ class HomeController: UIViewController, SenseOSDelegate {
     
     func onSuccess(data: String) {
         guard let jsonData = data.data(using: .utf8) else {
-            print("Error: Could not convert string to Data")
             return
         }
         
@@ -104,7 +104,6 @@ class HomeController: UIViewController, SenseOSDelegate {
                             for appStatus in installedApps {
                                 if let appName = appStatus.keys.first,
                                    let isInstalled = appStatus[appName] {
-                                    print("App: \(appName), Installed: \(isInstalled)")
                                 }
                             }
                 
@@ -125,7 +124,7 @@ class HomeController: UIViewController, SenseOSDelegate {
                 }
             }
         } catch {
-            print("Error decoding JSON: \(error.localizedDescription)")
+          //  print("Error decoding JSON: \(error.localizedDescription)")
         }
     }
 
@@ -157,23 +156,23 @@ class HomeController: UIViewController, SenseOSDelegate {
 
         if !hasInstalledApp {
             let label = PaddedLabel()
-            label.text = "No Installed App"
+            label.text = "-"
             label.font = UIFont.systemFont(ofSize: 14)
             label.textColor = .gray
-            label.backgroundColor = UIColor(hex: "#F2F4F7")
-            label.layer.borderColor = UIColor.gray.cgColor
-            label.layer.borderWidth = 1
-            label.layer.cornerRadius = 6
-            label.layer.masksToBounds = true
+         //   label.backgroundColor = UIColor(hex: "#F2F4F7")
+//            label.layer.borderColor = UIColor.gray.cgColor
+//            label.layer.borderWidth = 1
+//            label.layer.cornerRadius = 6
+//            label.layer.masksToBounds = true
             
             installedAppsStackView.addArrangedSubview(label)
-            
-//            viewInstallStack?.constant = 50
-//            installStackView?.constant = 50
+            installedAppViewHeightConstant.constant = 50
+            viewInstallStack?.constant = 30
+            installStackView?.constant = 30
         } else {
-           
-//            viewInstallStack?.constant = 128
-//            installStackView?.constant = 128
+            installedAppViewHeightConstant.constant = 150
+            viewInstallStack?.constant = 128
+            installStackView?.constant = 128
         }
     }
 
@@ -222,9 +221,13 @@ class HomeController: UIViewController, SenseOSDelegate {
     func rootLabelFunction(jailBreak: Bool, Frida: Bool, Simulator: Bool, DeveloperMode: Bool, Vpn: Bool) {
         
         if jailBreak {
+            if #available(iOS 13.0, *) {
+                self.imgJailbreak.image = UIImage(systemName: "checkmark.circle")
+            } else {
+            }
+            self.imgJailbreak.tintColor =  UIColor(hex: "#B42318")
             self.viewJailbreak.backgroundColor = UIColor(hex: "#FECDCA")
             self.viewJailbreak.tintColor =  UIColor(hex: "#B42318")
-            self.imgJailbreak.tintColor =  UIColor(hex: "#B42318")
             self.imgJailbreak.backgroundColor =  UIColor(hex: "#FECDCA")
             self.lblJailbreak.text = "Detected  "
             self.lblJailbreak.textColor = UIColor(hex: "#B42318")
@@ -235,9 +238,13 @@ class HomeController: UIViewController, SenseOSDelegate {
         }
         
         if Frida {
+            if #available(iOS 13.0, *) {
+                self.imgFrida.image = UIImage(systemName: "checkmark.circle")
+            } else {
+            }
+            self.imgFrida.tintColor =  UIColor(hex: "#B42318")
             self.viewFrida.backgroundColor = UIColor(hex: "#FECDCA")
             self.viewImgFrida.tintColor =  UIColor(hex: "#B42318")
-            self.imgFrida.tintColor =  UIColor(hex: "#B42318")
             self.imgFrida.backgroundColor =  UIColor(hex: "#FECDCA")
             self.lblFrida.text = "Detected  "
             self.lblFrida.textColor = UIColor(hex: "#B42318")
@@ -248,9 +255,13 @@ class HomeController: UIViewController, SenseOSDelegate {
         }
         
         if Simulator {
+            if #available(iOS 13.0, *) {
+                self.imgSimulator.image = UIImage(systemName: "checkmark.circle")
+            } else {
+            }
+            self.imgSimulator.tintColor =  UIColor(hex: "#B42318")
             self.viewSimulator.backgroundColor = UIColor(hex: "#FECDCA")
             self.viewImgSimulator.tintColor =  UIColor(hex: "#B42318")
-            self.imgSimulator.tintColor =  UIColor(hex: "#B42318")
             self.imgSimulator.backgroundColor =  UIColor(hex: "#FECDCA")
             self.lblSimulator.text = "Detected  "
             self.lblSimulator.textColor = UIColor(hex: "#B42318")
@@ -262,6 +273,10 @@ class HomeController: UIViewController, SenseOSDelegate {
         
         if DeveloperMode {
             self.viewDevMode.backgroundColor = UIColor(hex: "#FECDCA")
+            if #available(iOS 13.0, *) {
+                self.ImgCircle.image = UIImage(systemName: "checkmark.circle")
+            } else {
+            }
             self.ImgCircle.tintColor =  UIColor(hex: "#B42318")
             self.ImgCircle.backgroundColor =  UIColor(hex: "#FECDCA")
             self.viewImgDevMode.backgroundColor =  UIColor(hex: "#FECDCA")
@@ -274,9 +289,13 @@ class HomeController: UIViewController, SenseOSDelegate {
         }
         
         if Vpn {
+            if #available(iOS 13.0, *) {
+                self.imgVPN.image = UIImage(systemName: "checkmark.circle")
+            } else {
+            }
+            self.imgVPN.tintColor =  UIColor(hex: "#B42318")
             self.viewImgVPN.backgroundColor = UIColor(hex: "#FECDCA")
             self.viewImgVPN.tintColor =  UIColor(hex: "#B42318")
-            self.imgVPN.tintColor =  UIColor(hex: "#B42318")
             self.imgVPN.backgroundColor =  UIColor(hex: "#FECDCA")
             self.lblVPN.text = "Detected  "
             self.lblVPN.textColor = UIColor(hex: "#B42318")

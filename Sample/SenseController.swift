@@ -5,16 +5,13 @@ import SenseAppProtect_Demo
 
 @available(iOS 13.0, *)
 class SenseController: UIViewController,SenseOSDelegate {
-    @IBOutlet weak var lblData: UILabel!
     @IBOutlet weak var btnSubmit: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
 
     }
     @IBAction func btnSubmit(_ sender: Any) {
-        SenseOS.getSenseDetails(withDelegate: self)
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let sceneDelegate = windowScene.delegate as? SceneDelegate,
            let window = sceneDelegate.window {
@@ -24,6 +21,7 @@ class SenseController: UIViewController,SenseOSDelegate {
             window.rootViewController = tabBarController
             window.makeKeyAndVisible()
         }
+
     }
     
     func onFailure(message: String) {
@@ -38,10 +36,8 @@ class SenseController: UIViewController,SenseOSDelegate {
             if let beautifiedJSON = self.beautifyJSON(encodedString) {
             
             }
-         //   print("\(data)")
         }
     }
-    
     
     func beautifyJSON(_ jsonString: String) -> String? {
         if let jsonData = jsonString.data(using: .utf8) {
