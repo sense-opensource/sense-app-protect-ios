@@ -18,61 +18,41 @@
 <img width="6.5%" src="https://custom-icon-badges.demolab.com/badge/Commit-green.svg?logo=git-commit&logoColor=fff"> 
 </p>
 
-<p> Sense is a client side library that enables you to identify users by pinpointing their hardware and software characteristics. This is done by computing a token that stays consistent in spite of any manipulation.</p>                           
-<p> This tracking method works even in the browser's incognito mode and is not cleared by flushing the cache, closing the browser or restarting the operating system, using a VPN or installing AdBlockers. Sense is available as SenseOS for every open source requirement and is different from Sense PRO, our extremely accurate and detailed product.</p>
-
-
-<p> Sense’s real time demo : https://pro.getsense.co/
-
-**Try visiting the same page in an incognito mode or switch on the VPN and 
-notice how the visitor identifier remains the same in spite of all these changes!**
-
 <h3>Getting started with Sense </h3>
 
-```
-
 Sense is a device intelligence and identification tool. This tool collects a comprehensive set of attributes unique to a device or browser, forming an identity that will help businesses.
-Requirements
 
-```
+<h3>Requirements</h3>
+
 * OS 12.0 or above.
 * Swift version 5.0 and above
-```
+
 
 Note: If the application does not have the listed permissions, the values collected using those permissions will be ignored. To provide a valid device details, we recommend employing as much permission as possible based on your use-case.
 
-#### Step 1 - Import SDK
-
-```
+ Step 1 - Import SDK
+ 
  import SenseOSProtect
-```
 
-#### Step 2 - Add Delegate Method
+ Step 2 - Add Delegate Method
 
  Add the delegate method in your Controller Class file.
 
-```
-SenseOSProtectDelegate
-```
+ SenseOSProtectDelegate
 
-#### Step 3 - Get Device Details
+ Step 3 - Get Device Details
 
 Use the line below to invoke any button action or ViewDidLoad to get the DeviceDetails
 
-```
 let localPackageList: [(packageName: String, packageCode: String)] = [
-                    (“Package Name”, “Package Code”)]
-                
+                    (“Package Name”, “Package Code”)]        
         let config = SenseOSProtectConfig(installedAppList: localPackageList)
         SenseOSProtect.initSDK(senseConfig: config, withDelegate: self)
         SenseOSProtect.getSenseDetails(withDelegate: self)
-```
 
-#### Step 4 - Add your plist file
+ Step 4 - Add your plist file
 
  Add the bundle identifier name in your plist file, whatever you want.
-
-``` 
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>whatsapp</string>
@@ -81,14 +61,13 @@ let localPackageList: [(packageName: String, packageCode: String)] = [
 		<string>cred</string>
 		<string>supermoney</string>
 	</array>
-```
 
-#### Step 5 - Implement Delegate Method
+ Step 5 - Implement Delegate Method
 
  Set and Implement our Delegate method to receive the Callback details
 
-```
-extension ViewController: SenseDelegate{
+
+ extension ViewController: SenseDelegate{
     func onFailure(message: String) {
         // Failure Callback.
     }
@@ -96,13 +75,11 @@ extension ViewController: SenseDelegate{
         // Success Callback
     }
 }
-```
 
-#### Sample Program
+ Sample Program
 
 Here you can find the demonstration to do the integration.
 
-```
 import UIKit
 import SenseOSProtect
 
@@ -124,8 +101,7 @@ class SenseOSController: UIViewController, SenseOSProtectDelegate {
   }
 
 }
-
-``` 
+ 
 <h3>Run this code here : (sandbox environment to check and verify the code)</h3>
 
 <h4>Plug and play, in just 3 steps</h3>  
