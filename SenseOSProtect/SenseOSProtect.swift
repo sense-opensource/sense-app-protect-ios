@@ -21,38 +21,68 @@ let timeZoneName = timeZone.identifier
     func onSuccess(data: String)
 }
 
-let sense = SenseOSProtect()
 public class SenseOSProtect: NSObject{
+    public static let shared = SenseOSProtect()
+    
     private static var senseConfig: SenseOSProtectConfig?
     static var delegate: SenseOSProtectDelegate?
     
+    private override init() {}
+    
     public static func initSDK(senseConfig: SenseOSProtectConfig?, withDelegate: SenseOSProtectDelegate?) {
-        self.delegate = withDelegate
+        print("SDK initialized")
         self.senseConfig = senseConfig
+        self.delegate = withDelegate
+       
     }
     
-    public static func getSenseDetails(
-        withDelegate: SenseOSProtectDelegate?) {
-            getInstalledAppsFromLocalList{ installedApps in
-                self.delegate = withDelegate
+    public static func getSenseDetails(withDelegate: SenseOSProtectDelegate?) {
+           guard let config = self.senseConfig else {
+               withDelegate?.onFailure(message: "SDK not initialized")
+               return
+           }
 
-                let data: [String: Any] = [
-                    "str": [
-                        "version": "0.0.1",
-                        "detection": DeviceDetail().getDetection(data: installedApps)
-                    ],
-                ]
-                
-                if let jsonData = try? JSONSerialization.data(withJSONObject: data, options: .prettyPrinted),
-                   let jsonString = String(data: jsonData, encoding: .utf8) {
-                    withDelegate?.onSuccess(data: jsonString)
-                } else {
-                    withDelegate?.onFailure(message: "Failed to serialize data")
-                }
-            }
-        }
-    }
+           getInstalledAppsFromLocalList(packageList: config.installedAppList) { installedApps in
+               self.delegate = withDelegate
 
+               let data: [String: Any] = [
+                   "str": [
+                       "version": "0.0.1",
+                       "detection": DeviceDetail().getDetection(data: installedApps)
+                   ]
+               ]
+
+               if let jsonData = try? JSONSerialization.data(withJSONObject: data, options: .prettyPrinted),
+                  let jsonString = String(data: jsonData, encoding: .utf8) {
+                   withDelegate?.onSuccess(data: jsonString)
+               } else {
+                   withDelegate?.onFailure(message: "Failed to serialize data")
+               }
+           }
+       }
+
+       private static func getInstalledAppsFromLocalList(
+           packageList: [(packageName: String, packageCode: String)],
+           completion: @escaping ([String: Bool]) -> Void
+       ) {
+           let installedApps = checkInstalledApps(packageList: packageList)
+           completion(installedApps)
+       }
+
+       private static func checkInstalledApps(
+           packageList: [(packageName: String, packageCode: String)]
+       ) -> [String: Bool] {
+           var result: [String: Bool] = [:]
+           for (packageName, packageCode) in packageList {
+               if let url = URL(string: "\(packageCode)://"), UIApplication.shared.canOpenURL(url) {
+                   result[packageName] = true
+               } else {
+                   result[packageName] = false
+               }
+           }
+           return result
+       }
+   }
 
 public class DeviceDetail {
     

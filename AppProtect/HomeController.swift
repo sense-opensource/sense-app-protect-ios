@@ -40,6 +40,17 @@ class HomeController: UIViewController, SenseOSProtectDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let localPackageList: [(packageName: String, packageCode: String)] = [
+                    ("WhatsApp", "whatsapp"),
+                    ("PhonePe", "phonepe"),
+                    ("Tez", "tez"),
+                    ("Cred", "cred"),
+                    ("SuperMoney", "supermoney")
+                ]
+                
+        let config = SenseOSProtectConfig(installedAppList: localPackageList)
+        SenseOSProtect.initSDK(senseConfig: config, withDelegate: self)
         SenseOSProtect.getSenseDetails(withDelegate: self)
         
         viewJailbreak.layer.borderColor = UIColor(hex: "#12B76A").cgColor
@@ -79,6 +90,7 @@ class HomeController: UIViewController, SenseOSProtectDelegate {
     }
     
     func onSuccess(data: String) {
+        print("data---",data)
         guard let jsonData = data.data(using: .utf8) else {
             return
         }
@@ -101,12 +113,7 @@ class HomeController: UIViewController, SenseOSProtectDelegate {
                 let sim2Present = simInfo?["sim2Present"] as? Bool ?? false
                 let simCount = simInfo?["count"] as? Int ?? 0
                 
-                let installedApps = detection["installedApps"] as? [[String: Bool]] ?? []
-                for appStatus in installedApps {
-                    if let appName = appStatus.keys.first,
-                       let isInstalled = appStatus[appName] {
-                    }
-                }
+                let installedApps = detection["installedApps"] as? [String: Bool] ?? [:]
                 
                 DispatchQueue.main.async {
                     self.rootLabelFunction(
@@ -130,17 +137,15 @@ class HomeController: UIViewController, SenseOSProtectDelegate {
     }
     
     
-    func updateInstalledAppsList(_ installedApps: [[String: Bool]]) {
+    func updateInstalledAppsList(_ installedApps: [String: Bool]) {
         installedAppsStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
-        
+
         var hasInstalledApp = false
-        
-        for appStatus in installedApps {
-            if let appName = appStatus.keys.first,
-               let isInstalled = appStatus[appName], isInstalled {
-                
+
+        for (appName, isInstalled) in installedApps {
+            if isInstalled {
                 hasInstalledApp = true
-                
+
                 let label = PaddedLabel()
                 label.text = appName
                 label.font = UIFont.systemFont(ofSize: 14)
@@ -150,11 +155,11 @@ class HomeController: UIViewController, SenseOSProtectDelegate {
                 label.layer.borderWidth = 1
                 label.layer.cornerRadius = 6
                 label.layer.masksToBounds = true
-                
+
                 installedAppsStackView.addArrangedSubview(label)
             }
         }
-        
+
         if !hasInstalledApp {
             let label = PaddedLabel()
             label.text = "-"
@@ -170,6 +175,7 @@ class HomeController: UIViewController, SenseOSProtectDelegate {
             installStackView?.constant = 128
         }
     }
+
     
     
     
