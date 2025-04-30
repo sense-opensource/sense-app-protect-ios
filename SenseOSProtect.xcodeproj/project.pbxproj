@@ -1,0 +1,630 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7EEECC9C2DC1FB4E00EFE9E1 /* SenseOSProtect.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EEECC9B2DC1FB4E00EFE9E1 /* SenseOSProtect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EEECCA32DC1FBE400EFE9E1 /* SenseOSProtect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEECCA22DC1FBE400EFE9E1 /* SenseOSProtect.swift */; };
+		7EEECCA52DC1FC1800EFE9E1 /* SenseOSProtectConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEECCA42DC1FC1800EFE9E1 /* SenseOSProtectConfig.swift */; };
+		7EEECCA72DC1FC1E00EFE9E1 /* DeviceDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEECCA62DC1FC1E00EFE9E1 /* DeviceDetails.swift */; };
+		7EEECCAF2DC1FDF600EFE9E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEECCAE2DC1FDF600EFE9E1 /* AppDelegate.swift */; };
+		7EEECCB12DC1FDF600EFE9E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEECCB02DC1FDF600EFE9E1 /* SceneDelegate.swift */; };
+		7EEECCB82DC1FDF800EFE9E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EEECCB72DC1FDF800EFE9E1 /* Assets.xcassets */; };
+		7EEECCC12DC1FE2700EFE9E1 /* SenseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEECCC02DC1FE2600EFE9E1 /* SenseController.swift */; };
+		7EEECCC32DC1FE4500EFE9E1 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEECCC22DC1FE4500EFE9E1 /* HomeController.swift */; };
+		7EEECCC52DC1FE5800EFE9E1 /* DocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEECCC42DC1FE5800EFE9E1 /* DocumentController.swift */; };
+		7EEECCC72DC1FE5E00EFE9E1 /* PolicyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEECCC62DC1FE5E00EFE9E1 /* PolicyController.swift */; };
+		7EEECCC92DC1FE6400EFE9E1 /* SupportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEECCC82DC1FE6400EFE9E1 /* SupportController.swift */; };
+		7EEECCCB2DC1FE7200EFE9E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EEECCCA2DC1FE7200EFE9E1 /* Main.storyboard */; };
+		7EEECCCD2DC1FE9700EFE9E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EEECCCC2DC1FE9700EFE9E1 /* LaunchScreen.storyboard */; };
+		7EEECCDB2DC1FEEA00EFE9E1 /* Satoshi-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7EEECCCF2DC1FEE900EFE9E1 /* Satoshi-Italic.otf */; };
+		7EEECCDC2DC1FEEA00EFE9E1 /* Satoshi-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7EEECCD02DC1FEE900EFE9E1 /* Satoshi-BlackItalic.otf */; };
+		7EEECCDD2DC1FEEA00EFE9E1 /* Satoshi-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7EEECCD12DC1FEE900EFE9E1 /* Satoshi-Light.otf */; };
+		7EEECCDE2DC1FEEA00EFE9E1 /* Satoshi-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7EEECCD22DC1FEEA00EFE9E1 /* Satoshi-LightItalic.otf */; };
+		7EEECCDF2DC1FEEA00EFE9E1 /* Satoshi-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7EEECCD32DC1FEEA00EFE9E1 /* Satoshi-MediumItalic.otf */; };
+		7EEECCE02DC1FEEA00EFE9E1 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEECCD42DC1FEEA00EFE9E1 /* Extension.swift */; };
+		7EEECCE12DC1FEEA00EFE9E1 /* Satoshi-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7EEECCD52DC1FEEA00EFE9E1 /* Satoshi-BoldItalic.otf */; };
+		7EEECCE22DC1FEEA00EFE9E1 /* Satoshi-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7EEECCD62DC1FEEA00EFE9E1 /* Satoshi-Black.otf */; };
+		7EEECCE32DC1FEEA00EFE9E1 /* Satoshi-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7EEECCD72DC1FEEA00EFE9E1 /* Satoshi-Medium.otf */; };
+		7EEECCE42DC1FEEA00EFE9E1 /* Satoshi-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7EEECCD82DC1FEEA00EFE9E1 /* Satoshi-Regular.otf */; };
+		7EEECCE52DC1FEEA00EFE9E1 /* TopCornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEECCD92DC1FEEA00EFE9E1 /* TopCornerRadius.swift */; };
+		7EEECCE62DC1FEEA00EFE9E1 /* Satoshi-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7EEECCDA2DC1FEEA00EFE9E1 /* Satoshi-Bold.otf */; };
+		7EEECCE82DC1FFAC00EFE9E1 /* SenseOSProtect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EEECC982DC1FB4E00EFE9E1 /* SenseOSProtect.framework */; };
+		7EEECCE92DC1FFAC00EFE9E1 /* SenseOSProtect.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7EEECC982DC1FB4E00EFE9E1 /* SenseOSProtect.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7EEECCEA2DC1FFAC00EFE9E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EEECC8F2DC1FB4E00EFE9E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7EEECC972DC1FB4E00EFE9E1;
+			remoteInfo = SenseOSProtect;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7EEECCEC2DC1FFAC00EFE9E1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7EEECCE92DC1FFAC00EFE9E1 /* SenseOSProtect.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7EEECC982DC1FB4E00EFE9E1 /* SenseOSProtect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SenseOSProtect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EEECC9B2DC1FB4E00EFE9E1 /* SenseOSProtect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SenseOSProtect.h; sourceTree = "<group>"; };
+		7EEECCA22DC1FBE400EFE9E1 /* SenseOSProtect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenseOSProtect.swift; sourceTree = "<group>"; };
+		7EEECCA42DC1FC1800EFE9E1 /* SenseOSProtectConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenseOSProtectConfig.swift; sourceTree = "<group>"; };
+		7EEECCA62DC1FC1E00EFE9E1 /* DeviceDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDetails.swift; sourceTree = "<group>"; };
+		7EEECCAC2DC1FDF600EFE9E1 /* AppProtect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppProtect.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EEECCAE2DC1FDF600EFE9E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7EEECCB02DC1FDF600EFE9E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7EEECCB72DC1FDF800EFE9E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7EEECCBC2DC1FDF800EFE9E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EEECCC02DC1FE2600EFE9E1 /* SenseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenseController.swift; sourceTree = "<group>"; };
+		7EEECCC22DC1FE4500EFE9E1 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		7EEECCC42DC1FE5800EFE9E1 /* DocumentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentController.swift; sourceTree = "<group>"; };
+		7EEECCC62DC1FE5E00EFE9E1 /* PolicyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolicyController.swift; sourceTree = "<group>"; };
+		7EEECCC82DC1FE6400EFE9E1 /* SupportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportController.swift; sourceTree = "<group>"; };
+		7EEECCCA2DC1FE7200EFE9E1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7EEECCCC2DC1FE9700EFE9E1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7EEECCCF2DC1FEE900EFE9E1 /* Satoshi-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Italic.otf"; sourceTree = "<group>"; };
+		7EEECCD02DC1FEE900EFE9E1 /* Satoshi-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-BlackItalic.otf"; sourceTree = "<group>"; };
+		7EEECCD12DC1FEE900EFE9E1 /* Satoshi-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Light.otf"; sourceTree = "<group>"; };
+		7EEECCD22DC1FEEA00EFE9E1 /* Satoshi-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-LightItalic.otf"; sourceTree = "<group>"; };
+		7EEECCD32DC1FEEA00EFE9E1 /* Satoshi-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-MediumItalic.otf"; sourceTree = "<group>"; };
+		7EEECCD42DC1FEEA00EFE9E1 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		7EEECCD52DC1FEEA00EFE9E1 /* Satoshi-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-BoldItalic.otf"; sourceTree = "<group>"; };
+		7EEECCD62DC1FEEA00EFE9E1 /* Satoshi-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Black.otf"; sourceTree = "<group>"; };
+		7EEECCD72DC1FEEA00EFE9E1 /* Satoshi-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Medium.otf"; sourceTree = "<group>"; };
+		7EEECCD82DC1FEEA00EFE9E1 /* Satoshi-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Regular.otf"; sourceTree = "<group>"; };
+		7EEECCD92DC1FEEA00EFE9E1 /* TopCornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCornerRadius.swift; sourceTree = "<group>"; };
+		7EEECCDA2DC1FEEA00EFE9E1 /* Satoshi-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Bold.otf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7EEECC952DC1FB4E00EFE9E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EEECCA92DC1FDF600EFE9E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EEECCE82DC1FFAC00EFE9E1 /* SenseOSProtect.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7EEECC8E2DC1FB4E00EFE9E1 = {
+			isa = PBXGroup;
+			children = (
+				7EEECCCE2DC1FED100EFE9E1 /* Extension */,
+				7EEECC9A2DC1FB4E00EFE9E1 /* SenseOSProtect */,
+				7EEECCAD2DC1FDF600EFE9E1 /* AppProtect */,
+				7EEECC992DC1FB4E00EFE9E1 /* Products */,
+				7EEECCE72DC1FFAC00EFE9E1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7EEECC992DC1FB4E00EFE9E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7EEECC982DC1FB4E00EFE9E1 /* SenseOSProtect.framework */,
+				7EEECCAC2DC1FDF600EFE9E1 /* AppProtect.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7EEECC9A2DC1FB4E00EFE9E1 /* SenseOSProtect */ = {
+			isa = PBXGroup;
+			children = (
+				7EEECC9B2DC1FB4E00EFE9E1 /* SenseOSProtect.h */,
+				7EEECCA22DC1FBE400EFE9E1 /* SenseOSProtect.swift */,
+				7EEECCA42DC1FC1800EFE9E1 /* SenseOSProtectConfig.swift */,
+				7EEECCA62DC1FC1E00EFE9E1 /* DeviceDetails.swift */,
+			);
+			path = SenseOSProtect;
+			sourceTree = "<group>";
+		};
+		7EEECCAD2DC1FDF600EFE9E1 /* AppProtect */ = {
+			isa = PBXGroup;
+			children = (
+				7EEECCAE2DC1FDF600EFE9E1 /* AppDelegate.swift */,
+				7EEECCB02DC1FDF600EFE9E1 /* SceneDelegate.swift */,
+				7EEECCC02DC1FE2600EFE9E1 /* SenseController.swift */,
+				7EEECCC22DC1FE4500EFE9E1 /* HomeController.swift */,
+				7EEECCC42DC1FE5800EFE9E1 /* DocumentController.swift */,
+				7EEECCC62DC1FE5E00EFE9E1 /* PolicyController.swift */,
+				7EEECCC82DC1FE6400EFE9E1 /* SupportController.swift */,
+				7EEECCCA2DC1FE7200EFE9E1 /* Main.storyboard */,
+				7EEECCB72DC1FDF800EFE9E1 /* Assets.xcassets */,
+				7EEECCCC2DC1FE9700EFE9E1 /* LaunchScreen.storyboard */,
+				7EEECCBC2DC1FDF800EFE9E1 /* Info.plist */,
+			);
+			path = AppProtect;
+			sourceTree = "<group>";
+		};
+		7EEECCCE2DC1FED100EFE9E1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7EEECCD42DC1FEEA00EFE9E1 /* Extension.swift */,
+				7EEECCD92DC1FEEA00EFE9E1 /* TopCornerRadius.swift */,
+				7EEECCD62DC1FEEA00EFE9E1 /* Satoshi-Black.otf */,
+				7EEECCD02DC1FEE900EFE9E1 /* Satoshi-BlackItalic.otf */,
+				7EEECCDA2DC1FEEA00EFE9E1 /* Satoshi-Bold.otf */,
+				7EEECCD52DC1FEEA00EFE9E1 /* Satoshi-BoldItalic.otf */,
+				7EEECCCF2DC1FEE900EFE9E1 /* Satoshi-Italic.otf */,
+				7EEECCD12DC1FEE900EFE9E1 /* Satoshi-Light.otf */,
+				7EEECCD22DC1FEEA00EFE9E1 /* Satoshi-LightItalic.otf */,
+				7EEECCD72DC1FEEA00EFE9E1 /* Satoshi-Medium.otf */,
+				7EEECCD32DC1FEEA00EFE9E1 /* Satoshi-MediumItalic.otf */,
+				7EEECCD82DC1FEEA00EFE9E1 /* Satoshi-Regular.otf */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		7EEECCE72DC1FFAC00EFE9E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7EEECC932DC1FB4E00EFE9E1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EEECC9C2DC1FB4E00EFE9E1 /* SenseOSProtect.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7EEECC972DC1FB4E00EFE9E1 /* SenseOSProtect */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EEECC9F2DC1FB4E00EFE9E1 /* Build configuration list for PBXNativeTarget "SenseOSProtect" */;
+			buildPhases = (
+				7EEECC932DC1FB4E00EFE9E1 /* Headers */,
+				7EEECC942DC1FB4E00EFE9E1 /* Sources */,
+				7EEECC952DC1FB4E00EFE9E1 /* Frameworks */,
+				7EEECC962DC1FB4E00EFE9E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SenseOSProtect;
+			productName = SenseOSProtect;
+			productReference = 7EEECC982DC1FB4E00EFE9E1 /* SenseOSProtect.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7EEECCAB2DC1FDF600EFE9E1 /* AppProtect */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EEECCBD2DC1FDF800EFE9E1 /* Build configuration list for PBXNativeTarget "AppProtect" */;
+			buildPhases = (
+				7EEECCA82DC1FDF600EFE9E1 /* Sources */,
+				7EEECCA92DC1FDF600EFE9E1 /* Frameworks */,
+				7EEECCAA2DC1FDF600EFE9E1 /* Resources */,
+				7EEECCEC2DC1FFAC00EFE9E1 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7EEECCEB2DC1FFAC00EFE9E1 /* PBXTargetDependency */,
+			);
+			name = AppProtect;
+			productName = AppProtect;
+			productReference = 7EEECCAC2DC1FDF600EFE9E1 /* AppProtect.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7EEECC8F2DC1FB4E00EFE9E1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					7EEECC972DC1FB4E00EFE9E1 = {
+						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
+					};
+					7EEECCAB2DC1FDF600EFE9E1 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = 7EEECC922DC1FB4E00EFE9E1 /* Build configuration list for PBXProject "SenseOSProtect" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7EEECC8E2DC1FB4E00EFE9E1;
+			productRefGroup = 7EEECC992DC1FB4E00EFE9E1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7EEECC972DC1FB4E00EFE9E1 /* SenseOSProtect */,
+				7EEECCAB2DC1FDF600EFE9E1 /* AppProtect */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7EEECC962DC1FB4E00EFE9E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EEECCAA2DC1FDF600EFE9E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EEECCDC2DC1FEEA00EFE9E1 /* Satoshi-BlackItalic.otf in Resources */,
+				7EEECCE22DC1FEEA00EFE9E1 /* Satoshi-Black.otf in Resources */,
+				7EEECCCD2DC1FE9700EFE9E1 /* LaunchScreen.storyboard in Resources */,
+				7EEECCE32DC1FEEA00EFE9E1 /* Satoshi-Medium.otf in Resources */,
+				7EEECCE12DC1FEEA00EFE9E1 /* Satoshi-BoldItalic.otf in Resources */,
+				7EEECCDD2DC1FEEA00EFE9E1 /* Satoshi-Light.otf in Resources */,
+				7EEECCE62DC1FEEA00EFE9E1 /* Satoshi-Bold.otf in Resources */,
+				7EEECCCB2DC1FE7200EFE9E1 /* Main.storyboard in Resources */,
+				7EEECCB82DC1FDF800EFE9E1 /* Assets.xcassets in Resources */,
+				7EEECCE42DC1FEEA00EFE9E1 /* Satoshi-Regular.otf in Resources */,
+				7EEECCDB2DC1FEEA00EFE9E1 /* Satoshi-Italic.otf in Resources */,
+				7EEECCDF2DC1FEEA00EFE9E1 /* Satoshi-MediumItalic.otf in Resources */,
+				7EEECCDE2DC1FEEA00EFE9E1 /* Satoshi-LightItalic.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7EEECC942DC1FB4E00EFE9E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EEECCA72DC1FC1E00EFE9E1 /* DeviceDetails.swift in Sources */,
+				7EEECCA52DC1FC1800EFE9E1 /* SenseOSProtectConfig.swift in Sources */,
+				7EEECCA32DC1FBE400EFE9E1 /* SenseOSProtect.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EEECCA82DC1FDF600EFE9E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EEECCE52DC1FEEA00EFE9E1 /* TopCornerRadius.swift in Sources */,
+				7EEECCC32DC1FE4500EFE9E1 /* HomeController.swift in Sources */,
+				7EEECCAF2DC1FDF600EFE9E1 /* AppDelegate.swift in Sources */,
+				7EEECCB12DC1FDF600EFE9E1 /* SceneDelegate.swift in Sources */,
+				7EEECCC52DC1FE5800EFE9E1 /* DocumentController.swift in Sources */,
+				7EEECCC12DC1FE2700EFE9E1 /* SenseController.swift in Sources */,
+				7EEECCC72DC1FE5E00EFE9E1 /* PolicyController.swift in Sources */,
+				7EEECCC92DC1FE6400EFE9E1 /* SupportController.swift in Sources */,
+				7EEECCE02DC1FEEA00EFE9E1 /* Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7EEECCEB2DC1FFAC00EFE9E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7EEECC972DC1FB4E00EFE9E1 /* SenseOSProtect */;
+			targetProxy = 7EEECCEA2DC1FFAC00EFE9E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7EEECC9D2DC1FB4E00EFE9E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7EEECC9E2DC1FB4E00EFE9E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7EEECCA02DC1FB4E00EFE9E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 39UTNYU4ZJ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = Ippopay.SenseOSProtect;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7EEECCA12DC1FB4E00EFE9E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 39UTNYU4ZJ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = Ippopay.SenseOSProtect;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7EEECCBE2DC1FDF800EFE9E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 39UTNYU4ZJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AppProtect/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Ippopay.AppProtect;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7EEECCBF2DC1FDF800EFE9E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 39UTNYU4ZJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AppProtect/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Ippopay.AppProtect;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7EEECC922DC1FB4E00EFE9E1 /* Build configuration list for PBXProject "SenseOSProtect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EEECC9D2DC1FB4E00EFE9E1 /* Debug */,
+				7EEECC9E2DC1FB4E00EFE9E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7EEECC9F2DC1FB4E00EFE9E1 /* Build configuration list for PBXNativeTarget "SenseOSProtect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EEECCA02DC1FB4E00EFE9E1 /* Debug */,
+				7EEECCA12DC1FB4E00EFE9E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7EEECCBD2DC1FDF800EFE9E1 /* Build configuration list for PBXNativeTarget "AppProtect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EEECCBE2DC1FDF800EFE9E1 /* Debug */,
+				7EEECCBF2DC1FDF800EFE9E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7EEECC8F2DC1FB4E00EFE9E1 /* Project object */;
+}

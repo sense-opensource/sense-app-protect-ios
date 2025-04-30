@@ -1,10 +1,10 @@
 
 
 import UIKit
-import SenseAppProtect_Demo
+import SenseOSProtect
 
-class HomeController: UIViewController, SenseOSDelegate {
-
+class HomeController: UIViewController, SenseOSProtectDelegate {
+    
     @IBOutlet weak var installedAppViewHeightConstant: NSLayoutConstraint!
     @IBOutlet weak var imgVPN: UIImageView!
     @IBOutlet weak var imgSimulator: UIImageView!
@@ -40,7 +40,7 @@ class HomeController: UIViewController, SenseOSDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SenseOS.getSenseDetails(withDelegate: self)
+        SenseOSProtect.getSenseDetails(withDelegate: self)
         
         viewJailbreak.layer.borderColor = UIColor(hex: "#12B76A").cgColor
         viewJailbreak.layer.borderWidth = 1
@@ -52,12 +52,6 @@ class HomeController: UIViewController, SenseOSDelegate {
         viewDevMode.layer.borderWidth = 1
         viewImgVPN.layer.borderColor = UIColor(hex: "#12B76A").cgColor
         viewImgVPN.layer.borderWidth = 1
-        
-//        installStackView = installedAppsStackView.heightAnchor.constraint(equalToConstant: 100) // default
-//        installStackView?.isActive = true
-//        viewInstallStack = installedAppsStackView.heightAnchor.constraint(equalToConstant: 100) // default
-//        viewInstallStack?.isActive = true
-
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let tabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as? UITabBarController {
@@ -74,7 +68,14 @@ class HomeController: UIViewController, SenseOSDelegate {
     }
     
     func onFailure(message: String) {
-        
+        DispatchQueue.main.async {
+            
+            let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     func onSuccess(data: String) {
@@ -87,25 +88,25 @@ class HomeController: UIViewController, SenseOSDelegate {
                let str = json["str"] as? [String: Any],
                let detection = str["detection"] as? [String: Any] {
                 
-                            let isFrida = detection["isFrida"] as? Bool ?? false
-                            let isJailbroken = detection["isJailbroken"] as? Bool ?? false
-                            let developerMode = detection["developerModeEnabled"] as? Bool ?? false
-                            let isSimulator = detection["isSimulator"] as? Bool ?? false
-                            
-                            let vpnInfo = detection["vpn"] as? [String: Any]
-                            let isVpnAuxiliary = vpnInfo?["auxiliary"] as? Bool ?? false
-                            
-                            let simInfo = detection["sim"] as? [String: Any]
-                            let sim1Present = simInfo?["sim1Present"] as? Bool ?? false
-                            let sim2Present = simInfo?["sim2Present"] as? Bool ?? false
-                            let simCount = simInfo?["count"] as? Int ?? 0
-                            
-                            let installedApps = detection["installedApps"] as? [[String: Bool]] ?? []
-                            for appStatus in installedApps {
-                                if let appName = appStatus.keys.first,
-                                   let isInstalled = appStatus[appName] {
-                                }
-                            }
+                let isFrida = detection["isFrida"] as? Bool ?? false
+                let isJailbroken = detection["isJailbroken"] as? Bool ?? false
+                let developerMode = detection["developerModeEnabled"] as? Bool ?? false
+                let isSimulator = detection["isSimulator"] as? Bool ?? false
+                
+                let vpnInfo = detection["vpn"] as? [String: Any]
+                let isVpnAuxiliary = vpnInfo?["auxiliary"] as? Bool ?? false
+                
+                let simInfo = detection["sim"] as? [String: Any]
+                let sim1Present = simInfo?["sim1Present"] as? Bool ?? false
+                let sim2Present = simInfo?["sim2Present"] as? Bool ?? false
+                let simCount = simInfo?["count"] as? Int ?? 0
+                
+                let installedApps = detection["installedApps"] as? [[String: Bool]] ?? []
+                for appStatus in installedApps {
+                    if let appName = appStatus.keys.first,
+                       let isInstalled = appStatus[appName] {
+                    }
+                }
                 
                 DispatchQueue.main.async {
                     self.rootLabelFunction(
@@ -124,22 +125,22 @@ class HomeController: UIViewController, SenseOSDelegate {
                 }
             }
         } catch {
-          //  print("Error decoding JSON: \(error.localizedDescription)")
+            //  print("Error decoding JSON: \(error.localizedDescription)")
         }
     }
-
-
+    
+    
     func updateInstalledAppsList(_ installedApps: [[String: Bool]]) {
         installedAppsStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
-
+        
         var hasInstalledApp = false
-
+        
         for appStatus in installedApps {
             if let appName = appStatus.keys.first,
                let isInstalled = appStatus[appName], isInstalled {
                 
                 hasInstalledApp = true
-
+                
                 let label = PaddedLabel()
                 label.text = appName
                 label.font = UIFont.systemFont(ofSize: 14)
@@ -153,18 +154,12 @@ class HomeController: UIViewController, SenseOSDelegate {
                 installedAppsStackView.addArrangedSubview(label)
             }
         }
-
+        
         if !hasInstalledApp {
             let label = PaddedLabel()
             label.text = "-"
             label.font = UIFont.systemFont(ofSize: 14)
             label.textColor = .gray
-         //   label.backgroundColor = UIColor(hex: "#F2F4F7")
-//            label.layer.borderColor = UIColor.gray.cgColor
-//            label.layer.borderWidth = 1
-//            label.layer.cornerRadius = 6
-//            label.layer.masksToBounds = true
-            
             installedAppsStackView.addArrangedSubview(label)
             installedAppViewHeightConstant.constant = 50
             viewInstallStack?.constant = 30
@@ -175,22 +170,22 @@ class HomeController: UIViewController, SenseOSDelegate {
             installStackView?.constant = 128
         }
     }
-
-
-
+    
+    
+    
     
     func updateSimDetails(sim1Present: Bool, sim2Present: Bool, simCount: Int) {
         simStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
-
+        
         let sim1Status = sim1Present ? "SIM 1: Present" : "SIM 1: Not Present"
         let sim2Status = sim2Present ? "SIM 2: Present" : "SIM 2: Not Present"
         let simCountText = "SIM Count: \(simCount)"
-
+        
         simStackView.addArrangedSubview(createBorderedLabel(text: sim1Status))
         simStackView.addArrangedSubview(createBorderedLabel(text: sim2Status))
         simStackView.addArrangedSubview(createBorderedLabel(text: simCountText))
     }
-
+    
     func createBorderedLabel(text: String) -> UILabel {
         let label = PaddedLabel()
         label.text = text
@@ -206,11 +201,11 @@ class HomeController: UIViewController, SenseOSDelegate {
     
     class PaddedLabel: UILabel {
         var contentInsets = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)
-
+        
         override func drawText(in rect: CGRect) {
             super.drawText(in: rect.inset(by: contentInsets))
         }
-
+        
         override var intrinsicContentSize: CGSize {
             let size = super.intrinsicContentSize
             return CGSize(width: size.width + contentInsets.left + contentInsets.right,

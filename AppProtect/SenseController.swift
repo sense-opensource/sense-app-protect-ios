@@ -1,31 +1,38 @@
 
 
 import UIKit
-import SenseAppProtect_Demo
+import SenseOSProtect
 
 @available(iOS 13.0, *)
-class SenseController: UIViewController,SenseOSDelegate {
+class SenseController: UIViewController,SenseOSProtectDelegate {
     @IBOutlet weak var btnSubmit: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     @IBAction func btnSubmit(_ sender: Any) {
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let sceneDelegate = windowScene.delegate as? SceneDelegate,
            let window = sceneDelegate.window {
-
+            
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let tabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UITabBarController
             window.rootViewController = tabBarController
             window.makeKeyAndVisible()
         }
-
+        
     }
     
     func onFailure(message: String) {
-        
+        DispatchQueue.main.async {
+            
+            let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     func onSuccess(data: String) {
@@ -33,8 +40,8 @@ class SenseController: UIViewController,SenseOSDelegate {
             
             let encodedString = "\(data)"
             
-            if let beautifiedJSON = self.beautifyJSON(encodedString) {
-            
+            if self.beautifyJSON(encodedString) != nil {
+                
             }
         }
     }
@@ -60,5 +67,5 @@ class SenseController: UIViewController,SenseOSDelegate {
         super.viewWillAppear(true)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
-
+    
 }

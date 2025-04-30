@@ -16,23 +16,23 @@ import CoreBluetooth
 let timeZone = TimeZone.current
 let timeZoneName = timeZone.identifier
 
-@objc public protocol SenseOSDelegate {
+@objc public protocol SenseOSProtectDelegate {
     func onFailure(message: String)
     func onSuccess(data: String)
 }
 
-let sense = SenseOS()
-public class SenseOS: NSObject{
+let sense = SenseOSProtect()
+public class SenseOSProtect: NSObject{
     private static var senseConfig: SenseOSProtectConfig?
-    static var delegate: SenseOSDelegate?
+    static var delegate: SenseOSProtectDelegate?
     
-    public static func initSDK(senseConfig: SenseOSProtectConfig?, withDelegate: SenseOSDelegate?) {
+    public static func initSDK(senseConfig: SenseOSProtectConfig?, withDelegate: SenseOSProtectDelegate?) {
         self.delegate = withDelegate
         self.senseConfig = senseConfig
     }
     
     public static func getSenseDetails(
-        withDelegate: SenseOSDelegate?) {
+        withDelegate: SenseOSProtectDelegate?) {
             getInstalledAppsFromLocalList{ installedApps in
                 self.delegate = withDelegate
 
