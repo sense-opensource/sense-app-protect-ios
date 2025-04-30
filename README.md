@@ -52,14 +52,7 @@ let localPackageList: [(packageName: String, packageCode: String)] = [
         SenseOSProtect.getSenseDetails(withDelegate: self)
 ```
  Step 4 - Add your plist file
-```
-<key>NSLocationWhenInUseUsageDescription</key>
-<string>This app needs access to your location to provide location-based services.</string>
-<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-<string>Location access is required for enhanced app functionality.</string>
-<key>NSLocationWhenInUseUsageDescription</key>
-<string>Require to get user location</string>
-```
+ 
 Add the bundle identifier name in your plist file, whatever you want.
 ```
 	<key>LSApplicationQueriesSchemes</key>
@@ -76,7 +69,7 @@ Add the bundle identifier name in your plist file, whatever you want.
  Set and Implement our Delegate method to receive the Callback details
 
 ```
- extension ViewController: SenseDelegate{
+ extension ViewController: SenseOSProtectDelegate{
     func onFailure(message: String) {
         // Failure Callback.
     }
