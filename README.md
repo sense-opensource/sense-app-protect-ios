@@ -104,13 +104,13 @@ class SenseOSController: UIViewController, SenseOSProtectDelegate {
 
 }
  ```
-<h3>Run this code here : (sandbox environment to check and verify the code)</h3>
 
-<h4>Plug and play, in just 3 steps</h3>  
+<h4>Plug and play, in just 4 steps</h3>  
 
-1️⃣ Visit the Git hub repository for the desired function : Validate your desired repository  
-2️⃣ Download the code as a ZIP file : Host/clone the code in your local system or website  
-3️⃣ Run the installer : Start testing the accuracy of your desired metrics 
+1️⃣ Visit the GitHub Repository</br>
+2️⃣ Download or Clone the Repository. Use the GitHub interface to download the ZIP file, or run.</br>
+3️⃣ Run the Installer / Setup Script. Follow the setup instructions provided below.</br>
+4️⃣ Start Testing. Once installed, begin testing and validating the accuracy of the metrics you're interested in.</br>
 
 #### With Sense, you can  
 
