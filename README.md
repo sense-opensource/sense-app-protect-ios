@@ -30,28 +30,51 @@ notice how the visitor identifier remains the same in spite of all these changes
 <h3>Getting started with Sense </h3>
 
 ```
-Step: 1
-* import SenseOSProtect
+## Sense - iOS SDK
 
-Step: 2 
-* Add the delegate method in your Controller Class file
-	SenseOSProtectDelegate
+Sense is a device intelligence and identification tool. This tool collects a comprehensive set of attributes unique to a device or browser, forming an identity that will help businesses.
+Requirements
 
-Step: 3
-* Use the line below to invoke any button action or ViewDidLoad to get the DeviceDetails.
+```Swift
+* OS 12.0 or above.
+* Swift version 5.0 and above
+```
 
-	let localPackageList: [(packageName: String, packageCode: String)] = [
-                    (“Package Name”, “Package Code”)
-                ]
+Note: If the application does not have the listed permissions, the values collected using those permissions will be ignored. To provide a valid device details, we recommend employing as much permission as possible based on your use-case.
+
+#### Step 1 - Import SDK
+
+```
+ import SenseOSProtect
+```
+
+#### Step 2 - Add Delegate Method
+
+ Add the delegate method in your Controller Class file.
+
+```
+SenseOSProtectDelegate
+```
+
+#### Step 3 - Get Device Details
+
+Use the line below to invoke any button action or ViewDidLoad to get the DeviceDetails
+
+```
+let localPackageList: [(packageName: String, packageCode: String)] = [
+                    (“Package Name”, “Package Code”)]
                 
         let config = SenseOSProtectConfig(installedAppList: localPackageList)
         SenseOSProtect.initSDK(senseConfig: config, withDelegate: self)
         SenseOSProtect.getSenseDetails(withDelegate: self)
+```
 
-Step: 4
-* Add the bundle identifier name in your plist file, whatever you want.
-(Example) 
-<key>LSApplicationQueriesSchemes</key>
+#### Step 4 - Add your plist file
+
+ Add the bundle identifier name in your plist file, whatever you want.
+
+```(Example) 
+	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>whatsapp</string>
 		<string>tez</string>
@@ -59,17 +82,51 @@ Step: 4
 		<string>cred</string>
 		<string>supermoney</string>
 	</array>
+})
+```
 
-Step: 5
-* Manage the data about the delegate method's success and failure.
+#### Step 5 - Implement Delegate Method
 
- func onFailure(message: String) {
-        // Handle Failure
+ Set and Implement our Delegate method to receive the Callback details
+
+```
+extension ViewController: SenseDelegate{
+    func onFailure(message: String) {
+        // Failure Callback.
     }
-    
-    func onSuccess(data: String) {
-       // Handle Success
-        } 
+    func onSuccess(data: [String : Any]) {
+        // Success Callback
+    }
+}
+```
+
+#### Sample Program
+
+Here you can find the demonstration to do the integration.
+
+```
+import UIKit
+import SenseOSProtect
+
+class SenseOSController: UIViewController, SenseOSProtectDelegate {
+
+  override func viewDidLoad() {
+      super.viewDidLoad()
+      let localPackageList: [(packageName: String, packageCode: String)] = [
+                    (“Package Name”, “Package Code”)]      
+        let config = SenseOSProtectConfig(installedAppList: localPackageList)
+        SenseOSProtect.initSDK(senseConfig: config, withDelegate: self)
+        SenseOSProtect.getSenseDetails(withDelegate: self)
+  }
+  @objc func onSuccess(data: String) {     
+      // Handle success callback
+  }
+  @objc func onFailure(message: String) {
+      // Handle failure callback
+  }
+
+}
+
 ``` 
 <h3>Run this code here : (sandbox environment to check and verify the code)</h3>
 
