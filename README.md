@@ -31,28 +31,37 @@ Sense is a device intelligence and identification tool. This tool collects a com
 Note: If the application does not have the listed permissions, the values collected using those permissions will be ignored. To provide a valid device details, we recommend employing as much permission as possible based on your use-case.
 
  Step 1 - Import SDK
- 
+ ```
  import SenseOSProtect
+```
 
  Step 2 - Add Delegate Method
 
  Add the delegate method in your Controller Class file.
-
+```
  SenseOSProtectDelegate
-
+```
  Step 3 - Get Device Details
 
 Use the line below to invoke any button action or ViewDidLoad to get the DeviceDetails
-
+```
 let localPackageList: [(packageName: String, packageCode: String)] = [
                     (“Package Name”, “Package Code”)]        
         let config = SenseOSProtectConfig(installedAppList: localPackageList)
         SenseOSProtect.initSDK(senseConfig: config, withDelegate: self)
         SenseOSProtect.getSenseDetails(withDelegate: self)
-
+```
  Step 4 - Add your plist file
-
- Add the bundle identifier name in your plist file, whatever you want.
+```
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>This app needs access to your location to provide location-based services.</string>
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>Location access is required for enhanced app functionality.</string>
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>Require to get user location</string>
+```
+Add the bundle identifier name in your plist file, whatever you want.
+```
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>whatsapp</string>
@@ -61,12 +70,12 @@ let localPackageList: [(packageName: String, packageCode: String)] = [
 		<string>cred</string>
 		<string>supermoney</string>
 	</array>
-
+```
  Step 5 - Implement Delegate Method
 
  Set and Implement our Delegate method to receive the Callback details
 
-
+```
  extension ViewController: SenseDelegate{
     func onFailure(message: String) {
         // Failure Callback.
@@ -75,11 +84,11 @@ let localPackageList: [(packageName: String, packageCode: String)] = [
         // Success Callback
     }
 }
-
+```
  Sample Program
 
 Here you can find the demonstration to do the integration.
-
+```
 import UIKit
 import SenseOSProtect
 
@@ -101,7 +110,7 @@ class SenseOSController: UIViewController, SenseOSProtectDelegate {
   }
 
 }
- 
+ ```
 <h3>Run this code here : (sandbox environment to check and verify the code)</h3>
 
 <h4>Plug and play, in just 3 steps</h3>  
