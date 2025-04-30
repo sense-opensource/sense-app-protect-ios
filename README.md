@@ -81,7 +81,6 @@ let localPackageList: [(packageName: String, packageCode: String)] = [
 		<string>cred</string>
 		<string>supermoney</string>
 	</array>
-})
 ```
 
 #### Step 5 - Implement Delegate Method
