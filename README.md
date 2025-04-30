@@ -30,12 +30,11 @@ notice how the visitor identifier remains the same in spite of all these changes
 <h3>Getting started with Sense </h3>
 
 ```
-## Sense - iOS SDK
 
 Sense is a device intelligence and identification tool. This tool collects a comprehensive set of attributes unique to a device or browser, forming an identity that will help businesses.
 Requirements
 
-```Swift
+```
 * OS 12.0 or above.
 * Swift version 5.0 and above
 ```
