@@ -72,7 +72,7 @@ let localPackageList: [(packageName: String, packageCode: String)] = [
 
  Add the bundle identifier name in your plist file, whatever you want.
 
-```(Example) 
+``` 
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>whatsapp</string>
