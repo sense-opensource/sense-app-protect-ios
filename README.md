@@ -30,7 +30,46 @@ notice how the visitor identifier remains the same in spite of all these changes
 <h3>Getting started with Sense </h3>
 
 ```
-(code snippet)  
+Step: 1
+* import SenseOSProtect
+
+Step: 2 
+* Add the delegate method in your Controller Class file
+	SenseOSProtectDelegate
+
+Step: 3
+* Use the line below to invoke any button action or ViewDidLoad to get the DeviceDetails.
+
+	let localPackageList: [(packageName: String, packageCode: String)] = [
+                    (“Package Name”, “Package Code”)
+                ]
+                
+        let config = SenseOSProtectConfig(installedAppList: localPackageList)
+        SenseOSProtect.initSDK(senseConfig: config, withDelegate: self)
+        SenseOSProtect.getSenseDetails(withDelegate: self)
+
+Step: 4
+* Add the bundle identifier name in your plist file, whatever you want.
+(Example) 
+<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>whatsapp</string>
+		<string>tez</string>
+		<string>phonepe</string>
+		<string>cred</string>
+		<string>supermoney</string>
+	</array>
+
+Step: 5
+* Manage the data about the delegate method's success and failure.
+
+ func onFailure(message: String) {
+        // Handle Failure
+    }
+    
+    func onSuccess(data: String) {
+       // Handle Success
+        } 
 ``` 
 <h3>Run this code here : (sandbox environment to check and verify the code)</h3>
 
