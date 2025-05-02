@@ -18,6 +18,16 @@
 <img width="6.5%" src="https://custom-icon-badges.demolab.com/badge/Commit-green.svg?logo=git-commit&logoColor=fff"> 
 </p>
 
+### 🛡️ Device Integrity Checks
+
+![Frida](https://img.shields.io/badge/Frida-blue)
+![Simulator](https://img.shields.io/badge/Simulator-orange)
+![Installed Apps](https://img.shields.io/badge/Installed_Apps-yellow)
+![VPN](https://img.shields.io/badge/VPN-lightblue)
+![SIM](https://img.shields.io/badge/SIM-lightgreen)
+![Factory Reset](https://img.shields.io/badge/Factory_Reset-darkgreen)
+![Remote Control](https://img.shields.io/badge/Remote_Control-darkblue)
+
 <h3>Getting started with Sense </h3>
 
 Sense is a device intelligence and identification tool. This tool collects a comprehensive set of attributes unique to a device or browser, forming an identity that will help businesses.
