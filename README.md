@@ -40,28 +40,34 @@ Sense is a device intelligence and identification tool. This tool collects a com
 
 Note: If the application does not have the listed permissions, the values collected using those permissions will be ignored. To provide a valid device details, we recommend employing as much permission as possible based on your use-case.
 
- Step 1 - Import SDK
+Step 1 - Install SDK
+
+```swift
+ pod 'SenseOSProtect', '~> 0.0.2'
+````
+
+ Step 2 - Import SDK
  ```
  import SenseOSProtect
 ```
 
- Step 2 - Add Delegate Method
+ Step 3 - Add Delegate Method
 
  Add the delegate method in your Controller Class file.
 ```
  SenseOSProtectDelegate
 ```
- Step 3 - Get Device Details
+ Step 4 - Get Device Details
 
 Use the line below to invoke any button action or ViewDidLoad to get the DeviceDetails
 ```
 let localPackageList: [(packageName: String, packageCode: String)] = [
                     (“Package Name”, “Package Code”)]        
         let config = SenseOSProtectConfig(installedAppList: localPackageList)
-        SenseOSProtect.initSDK(senseConfig: config, withDelegate: self)
-        SenseOSProtect.getSenseDetails(withDelegate: self)
+        SenseOSProtectSDK.initSDK(senseConfig: config, withDelegate: self)
+        SenseOSProtectSDK.getSenseDetails(withDelegate: self)
 ```
- Step 4 - Add your plist file
+ Step 5 - Add your plist file
  
 Add the bundle identifier name in your plist file, whatever you want.
 ```
@@ -74,7 +80,7 @@ Add the bundle identifier name in your plist file, whatever you want.
 		<string>supermoney</string>
 	</array>
 ```
- Step 5 - Implement Delegate Method
+ Step 6 - Implement Delegate Method
 
  Set and Implement our Delegate method to receive the Callback details
 
@@ -102,8 +108,8 @@ class SenseOSController: UIViewController, SenseOSProtectDelegate {
       let localPackageList: [(packageName: String, packageCode: String)] = [
                     (“Package Name”, “Package Code”)]      
         let config = SenseOSProtectConfig(installedAppList: localPackageList)
-        SenseOSProtect.initSDK(senseConfig: config, withDelegate: self)
-        SenseOSProtect.getSenseDetails(withDelegate: self)
+        SenseOSProtectSDK.initSDK(senseConfig: config, withDelegate: self)
+        SenseOSProtectSDK.getSenseDetails(withDelegate: self)
   }
   @objc func onSuccess(data: String) {     
       // Handle success callback
