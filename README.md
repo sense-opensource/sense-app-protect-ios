@@ -18,61 +18,59 @@
 <img width="6.5%" src="https://custom-icon-badges.demolab.com/badge/Commit-green.svg?logo=git-commit&logoColor=fff"> 
 </p>
 
-<p> Sense is a client side library that enables you to identify users by pinpointing their hardware and software characteristics. This is done by computing a token that stays consistent in spite of any manipulation.</p>                           
-<p> This tracking method works even in the browser's incognito mode and is not cleared by flushing the cache, closing the browser or restarting the operating system, using a VPN or installing AdBlockers. Sense is available as SenseOS for every open source requirement and is different from Sense PRO, our extremely accurate and detailed product.</p>
+### 🛡️ Device Integrity Checks
 
-
-<p> Sense’s real time demo : https://pro.getsense.co/
-
-**Try visiting the same page in an incognito mode or switch on the VPN and 
-notice how the visitor identifier remains the same in spite of all these changes!**
+![Frida](https://img.shields.io/badge/Frida-blue)
+![Simulator](https://img.shields.io/badge/Simulator-orange)
+![Installed Apps](https://img.shields.io/badge/Installed_Apps-yellow)
+![VPN](https://img.shields.io/badge/VPN-lightblue)
+![SIM](https://img.shields.io/badge/SIM-lightgreen)
+![Factory Reset](https://img.shields.io/badge/Factory_Reset-darkgreen)
+![Remote Control](https://img.shields.io/badge/Remote_Control-darkblue)
 
 <h3>Getting started with Sense </h3>
 
-```
-
 Sense is a device intelligence and identification tool. This tool collects a comprehensive set of attributes unique to a device or browser, forming an identity that will help businesses.
-Requirements
 
-```
+<h3>Requirements</h3>
+
 * OS 12.0 or above.
 * Swift version 5.0 and above
-```
+
 
 Note: If the application does not have the listed permissions, the values collected using those permissions will be ignored. To provide a valid device details, we recommend employing as much permission as possible based on your use-case.
 
-#### Step 1 - Import SDK
+Step 1 - Install SDK
 
-```
+```swift
+ pod 'SenseOSProtect', '~> 0.0.2'
+````
+
+ Step 2 - Import SDK
+ ```
  import SenseOSProtect
 ```
 
-#### Step 2 - Add Delegate Method
+ Step 3 - Add Delegate Method
 
  Add the delegate method in your Controller Class file.
-
 ```
-SenseOSProtectDelegate
+ SenseOSProtectDelegate
 ```
-
-#### Step 3 - Get Device Details
+ Step 4 - Get Device Details
 
 Use the line below to invoke any button action or ViewDidLoad to get the DeviceDetails
-
 ```
 let localPackageList: [(packageName: String, packageCode: String)] = [
-                    (“Package Name”, “Package Code”)]
-                
+                    (“Package Name”, “Package Code”)]        
         let config = SenseOSProtectConfig(installedAppList: localPackageList)
-        SenseOSProtect.initSDK(senseConfig: config, withDelegate: self)
-        SenseOSProtect.getSenseDetails(withDelegate: self)
+        SenseOSProtectSDK.initSDK(senseConfig: config, withDelegate: self)
+        SenseOSProtectSDK.getSenseDetails(withDelegate: self)
 ```
-
-#### Step 4 - Add your plist file
-
- Add the bundle identifier name in your plist file, whatever you want.
-
-``` 
+ Step 5 - Add your plist file
+ 
+Add the bundle identifier name in your plist file, whatever you want.
+```
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>whatsapp</string>
@@ -82,13 +80,12 @@ let localPackageList: [(packageName: String, packageCode: String)] = [
 		<string>supermoney</string>
 	</array>
 ```
-
-#### Step 5 - Implement Delegate Method
+ Step 6 - Implement Delegate Method
 
  Set and Implement our Delegate method to receive the Callback details
 
 ```
-extension ViewController: SenseDelegate{
+ extension ViewController: SenseOSProtectDelegate{
     func onFailure(message: String) {
         // Failure Callback.
     }
@@ -97,11 +94,9 @@ extension ViewController: SenseDelegate{
     }
 }
 ```
-
-#### Sample Program
+ Sample Program
 
 Here you can find the demonstration to do the integration.
-
 ```
 import UIKit
 import SenseOSProtect
@@ -113,8 +108,8 @@ class SenseOSController: UIViewController, SenseOSProtectDelegate {
       let localPackageList: [(packageName: String, packageCode: String)] = [
                     (“Package Name”, “Package Code”)]      
         let config = SenseOSProtectConfig(installedAppList: localPackageList)
-        SenseOSProtect.initSDK(senseConfig: config, withDelegate: self)
-        SenseOSProtect.getSenseDetails(withDelegate: self)
+        SenseOSProtectSDK.initSDK(senseConfig: config, withDelegate: self)
+        SenseOSProtectSDK.getSenseDetails(withDelegate: self)
   }
   @objc func onSuccess(data: String) {     
       // Handle success callback
@@ -124,15 +119,14 @@ class SenseOSController: UIViewController, SenseOSProtectDelegate {
   }
 
 }
+ ```
 
-``` 
-<h3>Run this code here : (sandbox environment to check and verify the code)</h3>
+<h4>Plug and play, in just 4 steps</h3>  
 
-<h4>Plug and play, in just 3 steps</h3>  
-
-1️⃣ Visit the Git hub repository for the desired function : Validate your desired repository  
-2️⃣ Download the code as a ZIP file : Host/clone the code in your local system or website  
-3️⃣ Run the installer : Start testing the accuracy of your desired metrics 
+1️⃣ Visit the GitHub Repository</br>
+2️⃣ Download or Clone the Repository. Use the GitHub interface to download the ZIP file, or run.</br>
+3️⃣ Run the Installer / Setup Script. Follow the setup instructions provided below.</br>
+4️⃣ Start Testing. Once installed, begin testing and validating the accuracy of the metrics you're interested in.</br>
 
 #### With Sense, you can  
 
