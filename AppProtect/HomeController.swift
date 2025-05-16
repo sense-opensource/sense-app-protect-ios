@@ -97,23 +97,23 @@ class HomeController: UIViewController, SenseOSProtectDelegate {
         
         do {
             if let json = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any],
-               let str = json["str"] as? [String: Any],
-               let detection = str["detection"] as? [String: Any] {
+               let str = json["app_protect"] as? [String: Any] {
+            //   let detection = str["detection"] as? [String: Any] {
                 
-                let isFrida = detection["isFrida"] as? Bool ?? false
-                let isJailbroken = detection["isJailbroken"] as? Bool ?? false
-                let developerMode = detection["developerModeEnabled"] as? Bool ?? false
-                let isSimulator = detection["isSimulator"] as? Bool ?? false
+                let isFrida = str["isFrida"] as? Bool ?? false
+                let isJailbroken = str["isJailbroken"] as? Bool ?? false
+                let developerMode = str["developerModeEnabled"] as? Bool ?? false
+                let isSimulator = str["isSimulator"] as? Bool ?? false
                 
-                let vpnInfo = detection["vpn"] as? [String: Any]
+                let vpnInfo = str["vpn"] as? [String: Any]
                 let isVpnAuxiliary = vpnInfo?["auxiliary"] as? Bool ?? false
                 
-                let simInfo = detection["sim"] as? [String: Any]
+                let simInfo = str["sim"] as? [String: Any]
                 let sim1Present = simInfo?["sim1Present"] as? Bool ?? false
                 let sim2Present = simInfo?["sim2Present"] as? Bool ?? false
                 let simCount = simInfo?["count"] as? Int ?? 0
                 
-                let installedApps = detection["installedApps"] as? [String: Bool] ?? [:]
+                let installedApps = str["installedApps"] as? [String: Bool] ?? [:]
                 
                 DispatchQueue.main.async {
                     self.rootLabelFunction(

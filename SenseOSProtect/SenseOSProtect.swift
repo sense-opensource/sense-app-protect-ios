@@ -46,10 +46,8 @@ public class SenseOSProtect: NSObject{
                self.delegate = withDelegate
 
                let data: [String: Any] = [
-                   "str": [
-                       "version": "0.0.1",
-                       "detection": DeviceDetail().getDetection(data: installedApps)
-                   ]
+               
+                       "app_protect": DeviceDetail().getDetection(data: installedApps)
                ]
 
                if let jsonData = try? JSONSerialization.data(withJSONObject: data, options: .prettyPrinted),
